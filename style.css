@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+.digitalClock {
+  margin-top: 40vh;
+  border: 6px solid crimson;
+  padding: 5px 8px;
+  height: fit-content;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 30px -6px rgba(255, 51, 51, 1);
+  -moz-box-shadow: 0px 0px 30px -6px rgba(255, 51, 51, 1);
+  box-shadow: 0px 0px 40px 0px rgba(255, 51, 51, 1);
+  position: relative;
+}
+.digitalClock h1 {
+  font-size: 50px;
+}
+.hidden {
+  display: none;
+}
+
+.analogClock {
+  width: 200px;
+  height: 200px;
+  border: 2px solid gray;
+  margin-top: 38vh;
+  border-radius: 50%;
+  position: relative;
+  background: url("https://as2.ftcdn.net/v2/jpg/04/56/03/51/1000_F_456035174_bfgXtGHKQxoNWiaygbeRln6ZBYJMIt0K.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: -15px 15px 40px -6px rgba(255, 255, 255, 0.795),
+    15px 15px 40px -6px rgba(255, 57, 57, 0.767),
+    -15px -15px 40px -6px rgba(57, 93, 255, 0.774),
+    15px -15px 40px -6px rgba(10, 230, 28, 0.801),
+    0px 0px 140px -8px rgba(255, 255, 255, 0.795);
+  animation: analogclockanimation 1.5s ease-in-out infinite alternate;
+}
+.analogClock .seconds {
+  background-color: rgb(255, 128, 128);
+  width: 2px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: calc(50%);
+  transform: rotate(180deg);
+  transform-origin: top;
+}
+.analogClock .minutes {
+  background-color: rgb(0, 150, 117);
+  width: 2px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: calc(50%);
+  transform: rotate(180deg);
+  transform-origin: top;
+}
+.analogClock .hours {
+  background-color: rgb(9, 87, 255);
+  width: 2px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: calc(50%);
+  transform: rotate(180deg);
+  transform-origin: top;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 4vh;
+  display: flex;
+  gap: 8px;
+}
+.buttons .analogbutton {
+  font-size: 1.5rem;
+  padding: 4px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  box-shadow: 0px 0px 6px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 7rem;
+}
+.buttons .digitalbutton {
+  font-size: 1.5rem;
+  width: 7rem;
+  padding: 4px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  box-shadow: 0px 0px 6px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@keyframes analogclockanimation {
+  from {
+    box-shadow: -15px 15px 40px -6px rgba(255, 255, 255, 0.795),
+      15px 15px 40px -6px rgba(255, 57, 57, 0.767),
+      -15px -15px 40px -6px rgba(57, 93, 255, 0.774),
+      15px -15px 40px -6px rgba(10, 230, 28, 0.801),
+      0px 0px 140px -8px rgba(255, 255, 255, 0.795);
+  }
+  to {
+    box-shadow: -15px 15px 47px -6px rgba(255, 255, 255, 0.795),
+      15px 15px 47px -6px rgba(255, 57, 57, 0.767),
+      -15px -15px 47px -6px rgba(57, 93, 255, 0.774),
+      15px -15px 47px -6px rgba(10, 230, 28, 0.801),
+      0px 0px 140px -8px rgba(255, 255, 255, 0.795);
+  }
+}
